@@ -1,0 +1,37 @@
+[workspace]
+resolver = "2"
+
+members = [
+    "pool",
+    "jd-server", 
+    "roles-utils/config-helpers",
+    "roles-utils/network-helpers",
+    "roles-utils/rpc"
+]
+
+[workspace.dependencies]
+# Dependencies on sv2-core-test (will be git dependencies)
+stratum-common = { git = "https://github.com/GitGab19/sv2-core-test", branch = "main", features = ["with_network_helpers", "sv1"] }
+sv1_api = { git = "https://github.com/GitGab19/sv2-core-test", branch = "main", optional = true }
+roles_logic_sv2 = { git = "https://github.com/GitGab19/sv2-core-test", branch = "main" }
+network_helpers_sv2 = { git = "https://github.com/GitGab19/sv2-core-test", branch = "main" }
+codec_sv2 = { git = "https://github.com/GitGab19/sv2-core-test", branch = "main" }
+binary_sv2 = { git = "https://github.com/GitGab19/sv2-core-test", branch = "main" }
+template_distribution_sv2 = { git = "https://github.com/GitGab19/sv2-core-test", branch = "main" }
+mining_sv2 = { git = "https://github.com/GitGab19/sv2-core-test", branch = "main" }
+job_declaration_sv2 = { git = "https://github.com/GitGab19/sv2-core-test", branch = "main" }
+common_messages_sv2 = { git = "https://github.com/GitGab19/sv2-core-test", branch = "main" }
+
+[profile.dev]
+# Required by super_safe_lock
+opt-level = 1
+
+[profile.test]
+# Required by super_safe_lock  
+opt-level = 1
+
+[package]
+name = "sv2-pool-apps-test"
+version = "0.1.0"
+edition = "2021"
+publish = false
