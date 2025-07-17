@@ -14,6 +14,6 @@ keywords = ["stratum", "mining", "bitcoin", "protocol"]
 [dependencies]
 serde = { version = "1.0.89", features = ["derive","alloc"], default-features = false }
 miniscript = { version = "12.3.4", default-features = false, features = [ "no-std" ] }
-roles_logic_sv2 = { path = "../../../protocols/v2/roles-logic-sv2" }
+roles_logic_sv2 = { git = "https://github.com/GitGab19/sv2-core-test", branch = "main" }
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 tracing = { version = "0.1" }

@@ -18,8 +18,8 @@ path = "src/lib/mod.rs"
 
 [dependencies]
 async-channel = "1.5.1"
-stratum-common = { path = "../../common", features = ["with_network_helpers"] }
-buffer_sv2 = { path = "../../utils/buffer" }
+stratum-common = { git = "https://github.com/GitGab19/sv2-core-test", branch = "main", features = ["with_network_helpers"] }
+buffer_sv2 = { git = "https://github.com/GitGab19/sv2-core-test", branch = "main" }
 rand = "0.8.4"
 serde = { version = "1.0.89", features = ["derive", "alloc"], default-features = false }
 secp256k1 = { version = "0.28.2", default-features = false, features = ["alloc", "rand", "rand-std"] }
@@ -27,12 +27,12 @@ tokio = { version = "1.44.1", features = ["full"] }
 ext-config = { version = "0.14.0", features = ["toml"], package = "config" }
 tracing = { version = "0.1" }
 async-recursion = "1.0.0"
-error_handling = { path = "../../utils/error-handling" }
+error_handling = { git = "https://github.com/GitGab19/sv2-core-test", branch = "main" }
 nohash-hasher = "0.2.0"
-key-utils = { path = "../../utils/key-utils" }
+key-utils = { git = "https://github.com/GitGab19/sv2-core-test", branch = "main" }
 config-helpers = { path = "../roles-utils/config-helpers" }
 clap = { version = "4.5.39", features = ["derive"] }
 
 [dev-dependencies]
 hex = "0.4.3"
-integration_tests_sv2 = { path = "../../test/integration-tests" }
+integration_tests_sv2 = { git = "https://github.com/GitGab19/sv2-integration-test-framework-test", branch = "main" }
