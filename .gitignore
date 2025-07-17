@@ -1,4 +1,5 @@
 target/
+**/template-provider
 .env
 .DS_Store
 *.orig
