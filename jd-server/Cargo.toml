@@ -30,7 +30,7 @@ serde_json = { version = "1.0", default-features = false, features = ["alloc","r
 serde = { version = "1.0.89", features = ["derive", "alloc"], default-features = false }
 hashbrown = { version = "0.11", default-features = false, features = ["ahash", "serde"] }
 key-utils = { git = "https://github.com/GitGab19/sv2-core-test", branch = "main" }
-rpc_sv2 = { path = "../roles-utils/rpc" }
+rpc_sv2 = { git = "https://github.com/GitGab19/sv2-core-test", branch = "main" }
 hex = "0.4.3"
-config-helpers = { path = "../roles-utils/config-helpers" }
+config-helpers = { git = "https://github.com/GitGab19/sv2-core-test", branch = "main" }
 clap = { version = "4.5.39", features = ["derive"] }

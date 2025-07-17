@@ -3,9 +3,7 @@ resolver="2"
 
 members = [
     "pool",
-    "jd-server",
-    "roles-utils/network-helpers",
-    "roles-utils/config-helpers",
+    "jd-server"
 ]
 
 [profile.dev]
