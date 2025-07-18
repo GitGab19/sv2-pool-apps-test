@@ -1,8 +1,12 @@
-name: CI
-on: [push, pull_request]
+on:
+  pull_request:
+    branches:
+      - main
+
+name: Unit Tests
 
 jobs:
-  test-pool-apps:
+  test-core:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,13 +27,5 @@ jobs:
             target
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
           
-      - name: Run pool applications tests
+      - name: Run core protocol tests
         run: cargo test --verbose
-
-  integration-test:
-    if: github.event_name == 'pull_request'
-    needs: test-pool-apps
-    uses: GitGab19/sv2-integration-test-framework/.github/workflows/test-with-branch.yml@main
-    with:
-      repo_name: "sv2-pool-apps-test"
-      branch_name: ${{ github.head_ref }}

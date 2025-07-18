@@ -1,0 +1,15 @@
+name: Integration Tests for sv2-pool-apps-test PR
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  integration-tests:
+    name: Run Integration Tests
+    uses: GitGab19/sv2-integration-test-framework-test/.github/workflows/reusable-workflow.yml@main
+    with:
+      repo_name: "sv2-pool-apps-test"
+      branch_name: ${{ github.head_ref }}
+      repo_url: ${{ github.event.pull_request.head.repo.html_url }}
+    secrets: inherit
